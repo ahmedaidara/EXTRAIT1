@@ -35,3 +35,43 @@
     <h1>Chapitre 1</h1>
     <p>
       <!-- Collez le texte du chapitre ici -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec fringilla purus. Nulla facilisi. Donec eu augue arcu. Aliquam erat volutpat. Suspendisse potenti. Cras sagittis, magna a semper hendrerit, orci lorem aliquam metus, nec pulvinar ligula felis vel augue. Fusce accumsan scelerisque diam, et cursus odio dictum sed. Integer interdum urna sed turpis bibendum, id sollicitudin felis pretium. Donec auctor, eros ut blandit pharetra, sem augue convallis metus, in vulputate purus nulla eget arcu.
+    </p>
+  </div>
+  <script>
+    // Empêcher le copier-coller
+    document.addEventListener('copy', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('cut', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('paste', function(e) {
+      e.preventDefault();
+    });
+
+    // Empêcher le clic droit
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // Empêcher l'impression
+    function beforePrint(e) {
+      alert('L\'impression est désactivée pour ce document.');
+      e.preventDefault();
+    }
+
+    window.addEventListener('beforeprint', beforePrint);
+
+    // Empêcher la capture d'écran (partiellement possible)
+    document.addEventListener('keydown', function(e) {
+      if (e.keyCode == 44) { // Touche 'Impr écran'
+        alert('La capture d\'écran est désactivée.');
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
